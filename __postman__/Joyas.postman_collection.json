@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "b976d2da-e568-48ef-80ba-bd053b9afb02",
+		"name": "Joyas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36259807",
+		"_collection_link": "https://universal-sunset-842056.postman.co/workspace/Team-Workspace~87dcf439-d730-4733-8957-f59e684d4d58/collection/36259807-b976d2da-e568-48ef-80ba-bd053b9afb02?action=share&source=collection_link&creator=36259807"
+	},
+	"item": [
+		{
+			"name": "Joyas",
+			"item": [
+				{
+					"name": "/joyas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/joyas?limits=3&order_by=stock_asc&page=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"joyas"
+							],
+							"query": [
+								{
+									"key": "limits",
+									"value": "3"
+								},
+								{
+									"key": "order_by",
+									"value": "stock_asc"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas/filtros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/joyas/filtros?precio_min=25000&precio_max=30000&categoria=aros&metal=plata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"joyas",
+								"filtros"
+							],
+							"query": [
+								{
+									"key": "precio_min",
+									"value": "25000"
+								},
+								{
+									"key": "precio_max",
+									"value": "30000"
+								},
+								{
+									"key": "categoria",
+									"value": "aros"
+								},
+								{
+									"key": "metal",
+									"value": "plata"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas/:id (Search)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/joyas/6",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"joyas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Anillo Diamante\",\n    \"categoria\": \"anillo\",\n    \"metal\": \"plata\",\n    \"precio\": 25000,\n    \"stock\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/joyas",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"joyas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas/:id (New)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/joyas/7",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"joyas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Anillo Diamante\",\n    \"categoria\": \"anillo\",\n    \"metal\": \"plata\",\n    \"precio\": 28000,\n    \"stock\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/joyas/7",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"joyas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/joyas/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/joyas/7",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"joyas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Errors",
+			"item": [
+				{
+					"name": "404",
+					"item": [
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
